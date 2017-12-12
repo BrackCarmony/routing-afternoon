@@ -11,7 +11,7 @@ export default class Student extends Component {
     }
 
     componentDidMount() {
-        return axios.get(`/students/${this.props.match.params.id}`).then(res => {
+        return axios.get(`${process.env.PUBLIC_URL}/students/${this.props.match.params.id}`).then(res => {
             this.setState({
                 studentInfo: res.data
             })

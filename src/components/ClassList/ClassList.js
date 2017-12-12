@@ -12,7 +12,7 @@ export default class ClassList extends Component {
     }
 
     componentDidMount() {
-        return axios.get(`/students?class=${this.props.match.params.class}`).then(res => {
+        return axios.get(`${process.env.PUBLIC_URL}/students?class=${this.props.match.params.class}`).then(res => {
             this.setState({
                 students: res.data
             })
